@@ -6,6 +6,9 @@ module.exports = {
 
   ],
   theme: {
+    container: {
+      center: true,
+    },
     colors: {
       lightRed: "#f87171",
       teal: "#2dd4bf",
@@ -17,7 +20,10 @@ module.exports = {
       darkSlate: "#0f172a",
       lightGray: "#f7f7f7",
       white: "#fff",
-      dark: "#000"
+      dark: "#000",
+      yellowDark: "#f39c12",
+      paste: "#1abc9c",
+      darkGray: "#B3B3B3"
 
     },
     extend: {},

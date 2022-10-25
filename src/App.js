@@ -7,6 +7,7 @@ import Contact from './pages/contact/Contact';
 import Courses from './pages/courses/Courses';
 import Home from './pages/home/Home';
 import Faq from './pages/faq/Faq';
+import { loader as crsLoader } from './pages/home/Home';
 import NotFound from './pages/notfound/NotFound';
 
 
@@ -14,7 +15,7 @@ function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Root />}>
-      <Route path='/' element={<Home />} />
+      <Route path='/' element={<Home />} loader={crsLoader} />
       <Route path='/courses' element={<Courses />} />
       <Route path='/blog' element={<Blog />} />
       <Route path='/faq' element={<Faq />} />

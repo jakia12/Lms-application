@@ -5,7 +5,7 @@ import { Footer } from 'flowbite-react';
 const FooterPage = () => {
     return (
         <div className='footer'>
-            <Footer className='bg-darkSlate'>
+            <Footer className='footer_bg'>
                 <div className="w-full">
                     <div className="grid w-full grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
                         <div>
