@@ -9,6 +9,8 @@ import Home from './pages/home/Home';
 import Faq from './pages/faq/Faq';
 import { loader as crsLoader } from './pages/home/Home';
 import NotFound from './pages/notfound/NotFound';
+import PageDetails, { loader as paramsLoader } from './pages/pageDetails/PageDetails';
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
     <Route path='/' element={<Root />}>
       <Route path='/' element={<Home />} loader={crsLoader} />
       <Route path='/courses' element={<Courses />} />
+      <Route path='/singleCourse/:courseId' element={<PageDetails />} loader={paramsLoader} />
       <Route path='/blog' element={<Blog />} />
       <Route path='/faq' element={<Faq />} />
       <Route path='/contact' element={<Contact />} />

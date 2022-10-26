@@ -9,6 +9,14 @@ module.exports = {
     container: {
       center: true,
     },
+    listStyleType: {
+      none: 'none',
+      disc: 'disc',
+      decimal: 'decimal',
+      square: 'square',
+      roman: 'upper-roman',
+    }
+    ,
     colors: {
       lightRed: "#f87171",
       teal: "#2dd4bf",

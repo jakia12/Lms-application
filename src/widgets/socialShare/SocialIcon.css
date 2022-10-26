@@ -1,0 +1,14 @@
+a.social_icon {
+    width: 40px;
+    height: 40px;
+    line-height: 42px;
+    background: #16BDCA;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-right: 8px
+}

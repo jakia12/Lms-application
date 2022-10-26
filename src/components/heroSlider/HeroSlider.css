@@ -1,9 +1,3 @@
-.hero_bg {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../images/hero.jpg');
-    min-height: 570px;
-    background-size: cover;
-}
-
 .hero_content {
     min-height: 570px;
 }

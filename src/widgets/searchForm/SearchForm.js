@@ -27,7 +27,7 @@ const SearchForm = () => {
                 id="textId "
                 type="text"
                 value={text}
-                className='w-full border rounded-lg pl-12'
+                className='w-full border rounded-lg pl-12 search_input '
                 required={true}
                 onChange={handleChange}
 
@@ -37,7 +37,7 @@ const SearchForm = () => {
                 <IoSearchOutline />
             </span>
             <button
-                className="absolute right-4 top-3 text-darkGray text-xl pointer"
+                className="absolute close_btn right-4 top-3 text-darkGray text-xl pointer"
                 onClick={handleClear}
             >
                 <IoCloseCircle

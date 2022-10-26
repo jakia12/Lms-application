@@ -2,3 +2,13 @@ input#textId {
     padding-left: 3rem !important;
     font-size: 1rem;
 }
+
+
+/* .close_btn {
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.search_input: .close_btn {
+    opacity: 1
+} */

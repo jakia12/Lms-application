@@ -23,7 +23,7 @@ const SingleCard = ({ course }) => {
 
                 <div className="card_body px-6 py-8">
                     <Link to={`/singleCourse/${id}`}>
-                        <h3 className='text-xl text-dark font-semibold pb-4 ml-0 pl-0 card_title'>{title} </h3>
+                        <h3 className='text-xl text-dark font-semibold pb-4 ml-0 pl-0 card_title text-left'>{title} </h3>
                     </Link>
 
                     <div class="flex items-center pb-4">
