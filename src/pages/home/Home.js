@@ -18,10 +18,14 @@ const Home = () => {
                     <div className="flex  itmes-center flex-wrap">
                         {
                             courses.map((course) => (
-                                <SingleCard
-                                    key={course.id}
-                                    course={course}
-                                />
+                                <div className='lg:w-4/12 md:w-6/12  w-full lg:basis-4/12 grow-1 shrink-1'>
+                                    <SingleCard
+                                        key={course.id}
+                                        course={course}
+                                    />
+
+                                </div>
+
 
                             ))
                         }
