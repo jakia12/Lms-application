@@ -145,9 +145,9 @@ const Login = () => {
                                 </a>
                             </Label>
                         </div> */}
-                            <Button type="submit">
+                            <button className='bg-teal-400 text-white py-2 rounded-lg text-lg' type="submit">
                                 Login
-                            </Button>
+                            </button>
                         </form>
                         <div className="flex justify-between items-center py-6">
                             <span className="text-lg text-dark font-normal ">Not signed up yet?</span><span className="text-dark text-lg font-normal"> <Link to="/registration" className='underline'>Register here</Link></span>

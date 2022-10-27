@@ -213,8 +213,8 @@ const Registration = () => {
                             <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
 
                                 8 to 24 characters.<br />
-                                Must include uppercase and lowercase letters, a number and a special character.<br />
-                                Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
+                                Must include uppercase and lowercase letters, a number <br />
+                                {/* Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span> */}
                             </p>
                         </div>
 
@@ -230,9 +230,10 @@ const Registration = () => {
                                 </a>
                             </Label>
                         </div> */}
-                        <Button type="submit" disabled={!validName || !validEmail || !validPwd ? true : false}>
+
+                        <button className='bg-teal-400 text-white py-2 rounded-lg text-lg' type="submit" disabled={!validName || !validEmail || !validPwd ? true : false}>
                             Register
-                        </Button>
+                        </button>
                     </form>
                     <div className="flex justify-between items-center py-6">
                         <span className="text-lg text-dark font-normal ">Have an Account?</span><span className="text-dark text-lg font-normal"> <Link to="/login" className='underline'>Login here</Link></span>

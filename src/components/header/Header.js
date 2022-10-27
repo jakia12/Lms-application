@@ -3,10 +3,19 @@ import { Navbar, Dropdown, Avatar } from 'flowbite-react';
 import { NavLink, Link } from 'react-router-dom';
 import './Header.css';
 import { AuthState } from '../../context/AuthContext';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 const Header = () => {
     const { user, logOut } = AuthState();
     console.log();
+
+    //toggle button for dark mode
+    const [isDarkMode, setDarkMode] = React.useState(false);
+
+    const toggleDarkMode = () => {
+        setDarkMode(!isDarkMode);
+    };
+
 
     const handleLogOut = () => {
         logOut()
@@ -59,26 +68,20 @@ const Header = () => {
                                     <span onClick={handleLogOut}> Sign out</span>
                                 </Dropdown.Item>
                             </Dropdown>
-                            <Navbar.Toggle />
+
                         </div>
+
                     ) : (
-
-                        <>
-                            <Link to="/registration">
-                                <div className="mr-3">
-                                    <button className="bg-teal-400 rounded-lg px-5 py-2 text-white text-normal">Sign Up</button>
-                                </div>
-                            </Link>
-                            <Link to="/login">
-                                <div >
-                                    <button className="bg-teal-400 rounded-lg px-5 py-2 text-white text-normal">Log in</button>
-                                </div>
-                            </Link>
-                        </>
-                    )}
-
+                        <Link to="/registration">
+                            <div className="mr-3">
+                                <button className="bg-teal-400 rounded-lg px-5 py-2 text-white text-normal">Sign Up</button>
+                            </div>
+                        </Link>
+                    )
+                    }
+                    <Navbar.Toggle />
                 </div>
-                <Navbar.Collapse>
+                <Navbar.Collapse className='mt-2'>
                     <NavLink
                         to="/"
                         active={true}
@@ -89,18 +92,26 @@ const Header = () => {
                     <NavLink to="/courses">
                         Courses
                     </NavLink>
-                    <NavLink to="/services">
+                    {/* <NavLink to="/services">
                         Services
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink to="/blog">
                         Blog
                     </NavLink>
                     <NavLink to="/faq">
                         Faq
                     </NavLink>
-                    <NavLink to="/contact">
+                    {/* <NavLink to="/contact">
                         Contact
-                    </NavLink>
+                    </NavLink> */}
+
+                    <div className="togle">
+                        <label for="default-toggle-size" class="inline-flex relative items-center mb-5 cursor-pointer">
+                            <input type="checkbox" value="" id="default-toggle-size" class="sr-only peer" />
+                            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-dark"></div>
+
+                        </label>
+                    </div>
 
                 </Navbar.Collapse>
 

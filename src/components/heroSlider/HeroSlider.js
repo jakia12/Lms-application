@@ -13,8 +13,8 @@ const HeroSlider = () => {
 
         <>
 
-            <div className="hero_content_wrapper px-10 lg:px-0 ">
-                <h2 className="text-white text-5xl font-semibold pb-7 leading-10 lg:leading-none">
+            <div className="hero_content_wrapper px-10 lg:px-0 text-center">
+                <h2 className="text-white text-4xl md:text-5xl font-semibold pb-7  lg:leading-none">
                     Explore Tech-Academy Today
                 </h2>
                 <p className='text-white max-w-xl mx-auto  pb-9 leading-relaxed'>
