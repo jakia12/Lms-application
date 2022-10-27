@@ -12,7 +12,14 @@ const AuthContext = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   //google sign in
-  const providerLogin = (provider) => {
+  const googleLogin = (provider) => {
+    setLoading(true);
+    return signInWithPopup(auth, provider);
+  }
+
+  //facebook login
+
+  const facebookLogin = (provider) => {
     setLoading(true);
     return signInWithPopup(auth, provider);
   }
@@ -64,7 +71,8 @@ const AuthContext = ({ children }) => {
     user,
     loading,
     setLoading,
-    providerLogin,
+    googleLogin,
+    facebookLogin,
     logOut,
     updateUserProfile,
     verifyEmail,

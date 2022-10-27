@@ -4,6 +4,7 @@ import SingleCard from '../../components/singleCard/SingleCard';
 import { DataState } from '../../context/DataContext'
 import CourseCategory from '../../widgets/courseCategory/CourseCategory';
 import CourseLink from '../../widgets/courseLink/CourseLink';
+import ImgGallery from '../../widgets/imgGallery/ImgGallery';
 import RelatedPost from '../../widgets/relatedPost/RelatedPost';
 import SearchForm from '../../widgets/searchForm/SearchForm';
 import SocialIcon from '../../widgets/socialShare/SocialIcon';
@@ -51,20 +52,24 @@ const Courses = () => {
                                 <hr className='mb-4  bg-teal-500' />
                                 <SearchForm />
 
-                                <h2 className='text-2xl text-semibold text-dark text-left mb-2 mt-6'>Course Link</h2>
+                                <h2 className='text-2xl text-semibold text-dark text-left mb-2 mt-10'>Course Link</h2>
                                 <hr className='mb-4 bg-teal-500' />
                                 <CourseLink />
 
-                                <h2 className='text-2xl text-semibold text-dark text-left mb-2 mt-6'>Course Categories</h2>
+                                <h2 className='text-2xl text-semibold text-dark text-left mb-2 mt-10'>Course Categories</h2>
                                 <hr className='mb-4 bg-teal-500' />
                                 <CourseCategory />
-                                <h2 className='text-2xl text-semibold text-dark text-left mb-2 mt-6'>Related Course</h2>
+                                <h2 className='text-2xl text-semibold text-dark text-left mb-2 mt-10'>Related Course</h2>
                                 <hr className='mb-4 bg-teal-500' />
                                 <RelatedPost />
 
-                                <h2 className='text-2xl text-semibold text-dark text-left mb-2 mt-6'>Follow Us at</h2>
+                                <h2 className='text-2xl text-semibold text-dark text-left mb-2 mt-10'>Follow Us at</h2>
                                 <hr className='mb-4 bg-teal-500' />
                                 <SocialIcon />
+
+                                <h2 className='text-2xl text-semibold text-dark text-left mb-2 mt-10'>Image Gallery</h2>
+                                <hr className='mb-4 bg-teal-500' />
+                                <ImgGallery />
                             </div>
 
                         </div>
