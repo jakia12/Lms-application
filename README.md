@@ -5,7 +5,7 @@ Live site link: [Tech-academy](https://github.com/facebook/create-react-app).
 ### Description
 Tech-Academy application is created for helping the students all over the world who are intrigued to learn new technology,get their dream job and start their career  in the tech field
 
-### Technology used to build this app
+### Technologies are used to build this app
 * Html
 * Css
 * React Js
