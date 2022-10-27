@@ -3,11 +3,21 @@ import { useLoaderData } from 'react-router-dom';
 import { getSingleCrsData } from '../../util/api';
 import { IoDocumentTextOutline, IoCaretForwardCircleSharp } from 'react-icons/io5';
 import { Rating } from 'flowbite-react';
+import Pdf from "react-to-pdf";
+
+
 import './PageDetails.css';
 
 const PageDetails = () => {
     const course = useLoaderData();
     console.log(course);
+    const ref = React.createRef();
+    //react to pdf feature
+    const options = {
+        orientation: 'landscape',
+        unit: 'in',
+        format: [4, 2]
+    };
     return (
         <>
             <header className='singlepage_banner lg:py-18 lg:px-28 p-16 bg-darkSlate'>
@@ -37,10 +47,10 @@ const PageDetails = () => {
                 <div className=' container w-full mx-auto lg:max-w-7xl md:px-10 px-6'>
                     <div className="md:flex ">
                         <div className='w-full lg:w-8/12 md:w-8/12 max-w-full '>
-                            <div className="mr-5">
-                                <div className="inline_course_info flex items-center text-left justify-between pt-14 pb:10 lg:pt-16 lg:pb-10">
+                            <div ref={ref} className="mr-5">
+                                <div className="inline_course_info flex items-center text-left justify-between pt-12 pb:1 lg:pt-14 lg:pb-1">
                                     <div className="category_data">
-                                        <h3 className=" mb-2 text-xl text-teal-400 font-medium"> Category</h3>
+                                        <h3 className=" mb-2 text-lg text-teal-400 font-medium"> Category</h3>
                                         <h4 className="text-normal text-dark font-medium"> {course.name}</h4>
                                     </div>
 
@@ -54,11 +64,14 @@ const PageDetails = () => {
                                         <Rating.Star /> */}
 
                                     <div className="download_data">
-                                        <h3 className="text-xl mb-3 text-teal-400 font-medium">Download</h3>
-                                        <IoDocumentTextOutline />
+                                        <h3 className="text-lg mb-3 text-teal-400 font-medium">Download Pdf</h3>
+                                        <Pdf targetRef={ref} filename={`${course.name}.pdf`} >
+                                            {({ toPdf }) => <button className='text-2xl' onClick={toPdf}><IoDocumentTextOutline /></button>}
+                                        </Pdf>
+
                                     </div>
                                 </div>
-                                <hr className='bg-darkGray' />
+                                <hr className='bg-darkGray my-5 ' />
                                 {/* inline data end */}
                                 <div className=" course_overview text-left">
                                     <h2 className="text-2xl text-dark font-semibold my-4">

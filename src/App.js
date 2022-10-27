@@ -10,6 +10,9 @@ import Faq from './pages/faq/Faq';
 import { loader as crsLoader } from './pages/home/Home';
 import NotFound from './pages/notfound/NotFound';
 import PageDetails, { loader as paramsLoader } from './pages/pageDetails/PageDetails';
+import Registration from './pages/registration/Registration';
+import Login from './pages/login/Login';
+import CheckOut from './pages/checkOut/CheckOut';
 
 
 
@@ -23,6 +26,9 @@ function App() {
       <Route path='/blog' element={<Blog />} />
       <Route path='/faq' element={<Faq />} />
       <Route path='/contact' element={<Contact />} />
+      <Route path='/registration' element={<Registration />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/checkOut' element={<CheckOut />} />
       <Route path='*' element={<NotFound />} />
     </Route>
   ));
