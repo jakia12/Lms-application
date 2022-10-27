@@ -7,7 +7,7 @@ const CheckOut = () => {
 
     return (
         <div className='py-20 bg-lightGray'>
-            <div className="container w-full lg:max-w-7xl mx-auto">
+            <div className="container w-full lg:max-w-7xl mx-auto md:px-10 px-6">
                 <div className="text-center">
                     <h1 className="text-3xl font-semibold text-teal-400"> {course.name} Course</h1>
                 </div>

@@ -18,12 +18,14 @@ h5,
 h6,
 span {
   font-family: "Montserrat", sans-serif;
+  color: #191919 !important
 }
 
 p,
 a,
 button {
   font-family: "Raleway", sans-serif;
+
 }
 
 .clearfix:after {}

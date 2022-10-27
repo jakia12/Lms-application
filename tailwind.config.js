@@ -26,7 +26,7 @@ module.exports = {
       blue3: "#06b6d4",
       rose: "#fb7185",
       darkSlate: "#0f172a",
-      lightGray: "#f7f7f7",
+      lightGray: "#f9f9f9",
       white: "#fff",
       dark: "#000",
       yellowDark: "#f39c12",
