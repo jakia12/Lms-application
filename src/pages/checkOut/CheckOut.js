@@ -3,7 +3,8 @@ import React from 'react'
 const CheckOut = () => {
     return (
         <div>
-            this is checkout page
+            <img src="" alt="" />
+            this is a user
         </div>
     )
 }
