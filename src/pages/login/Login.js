@@ -1,15 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TextInput, Label, Button } from 'flowbite-react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { AuthState } from '../../context/AuthContext'
 const Login = () => {
+    const { signIn, setLoading } = AuthState();
+
+    //error state
+    const [error, setError] = useState();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    //path location
+    const from = location.state?.from?.pathname || '/';
+
+    //state for form validation
+    const [email, setEmail] = useState();
+
+    const [password, setPassword] = useState();
+
+    //handle email change
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    }
+
+    //handle password change
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    }
+
+
+    //handle submit for form submission
+
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setEmail('');
+                setPassword('');
+                setError('');
+                navigate(from, { replace: true });
+                console.log(user.displayName);
+            })
+            .catch(error => {
+                console.error(error)
+                setError(error.message);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
+    }
     return (
         <section className=" login_section lg:py-20 py-14 bg-lightGray ">
             <div className='container mx-auto lg:max-w-7xl md:px-10 px-6'>
                 <div className=' form_wrapper w-full mx-auto lg:max-w-lg'>
                     <h2 className="text-3xl font-semibold text-dark mt-7 mb-10 text-center">Login Now!</h2>
-                    <form className="flex flex-col gap-4">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
-
+                        <span className="text-red-600">{error}</span>
                         <div>
                             <div className="mb-2 block">
                                 <Label
@@ -20,6 +70,8 @@ const Login = () => {
                             <TextInput
                                 id="email2"
                                 type="email"
+                                value={email}
+                                onChange={handleEmailChange}
                                 placeholder="Email"
                                 required={true}
                                 shadow={true}
@@ -35,6 +87,8 @@ const Login = () => {
                             <TextInput
                                 id="password2"
                                 type="password"
+                                value={password}
+                                onChange={handlePasswordChange}
                                 placeholder='Password'
                                 required={true}
                                 shadow={true}

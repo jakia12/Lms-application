@@ -12,7 +12,9 @@ import NotFound from './pages/notfound/NotFound';
 import PageDetails, { loader as paramsLoader } from './pages/pageDetails/PageDetails';
 import Registration from './pages/registration/Registration';
 import Login from './pages/login/Login';
-import CheckOut from './pages/checkOut/CheckOut';
+import CheckOut, { loader as checkOutLoader } from './pages/checkOut/CheckOut';
+import PrivateRoute from './route/PrivateRoute';
+
 
 
 
@@ -28,7 +30,7 @@ function App() {
       <Route path='/contact' element={<Contact />} />
       <Route path='/registration' element={<Registration />} />
       <Route path='/login' element={<Login />} />
-      <Route path='/checkOut' element={<CheckOut />} />
+      <Route path='/checkout/:courseId' element={<PrivateRoute><CheckOut /></PrivateRoute>} loader={checkOutLoader} />
       <Route path='*' element={<NotFound />} />
     </Route>
   ));

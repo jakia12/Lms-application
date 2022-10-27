@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { getSingleCrsData } from '../../util/api';
 import { IoDocumentTextOutline, IoCaretForwardCircleSharp } from 'react-icons/io5';
 import { Rating } from 'flowbite-react';
+import { Link } from 'react-router-dom';
 import Pdf from "react-to-pdf";
 
 
@@ -132,7 +133,9 @@ const PageDetails = () => {
                                     <hr className='bg-darkGray my-4' />
                                 </div>
                                 <div className="feature_card_footer flex justify-between pt-1 pb-3 px-3">
-                                    <button className="py-3 rounded-lg px-7 bg-teal-400 text-white text-normal">Buy Now</button>
+                                    <Link to={`/checkout/${course.id}`}>
+                                        <button className="py-3 rounded-lg px-7 bg-teal-400 text-white text-normal">Get Premium Access</button>
+                                    </Link>
                                     <h3 className="text-xl text-dark font-medium">$ {course.price}</h3>
 
                                 </div>

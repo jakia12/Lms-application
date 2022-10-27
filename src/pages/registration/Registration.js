@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
 import { TextInput, Label, Button } from 'flowbite-react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useRef, useEffect } from 'react'
 import './Registration.css';
+import { AuthState } from '../../context/AuthContext';
 
 const Registration = () => {
+    const { createUser, updateUserProfile } = AuthState();
+
+    //navigation 
+    const navigate = useNavigate();
+
+    const [error, setError] = useState('');
+    const [accepted, setAccepted] = useState(false);
     // const { location } = FilterState();
     const userRef = useRef();
 
@@ -32,8 +40,9 @@ const Registration = () => {
     //regex for form validation
     const NAME_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
     const EMAIL_REGEX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+    const PWD_REGEX = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
+    // ^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$
     //handle name change
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -71,13 +80,50 @@ const Registration = () => {
         setValidPwd(PWD_REGEX.test(password));
     }, [password]);
 
+
+    //registratin handling
+    const handleSubmit = event => {
+        event.preventDefault();
+
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                setName('');
+                setPhoto('');
+                setEmail('');
+                setPassword('');
+                handleUpdateUserProfile();
+                navigate("/");
+                //handleEmailVerification();
+
+            })
+            .catch(e => {
+                console.error(e);
+                setError(e.message);
+            });
+    }
+
+    const handleUpdateUserProfile = () => {
+        const profile = {
+            displayName: name,
+            photoURL: photo
+        }
+
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => console.error(error));
+    }
+
     return (
         <section className=" register_section lg:py-20 py-14 bg-lightGray ">
             <div className='container mx-auto lg:max-w-7xl md:px-10 px-6'>
                 <div className=' form_wrapper w-full mx-auto lg:max-w-lg'>
                     <h2 className="text-3xl font-semibold text-dark mt-7 mb-10 text-center">Register Now!</h2>
-                    <form className="flex flex-col gap-4">
-                        <span className="text-lg font-normal text-red-500"></span>
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+
                         <div>
                             <div className="mb-2 block">
                                 <Label
