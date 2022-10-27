@@ -1,10 +1,9 @@
-# Application name: A lms aplication
+# Tech-Academy: A learning management syestem Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live site link: [Tech-academy](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
+## Description
+Tech-Academy application is created for helping the students all over the world who are intrigued to learn new technology,get their dream job and start their career  in the tech field
 
 ### `npm start`
 
