@@ -1,6 +1,6 @@
 ## Tech-Academy: A learning management syestem Application
 
-Live site link: [Tech-academy](https://github.com/facebook/create-react-app).
+Live site link: [Tech-academy](https://lms-app-3aa1e.web.app/).
 
 ### Description
 Tech-Academy application is created for helping the students all over the world who are intrigued to learn new technology,get their dream job and start their career  in the tech field
